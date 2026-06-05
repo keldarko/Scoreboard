@@ -12,7 +12,7 @@ body {
   height: auto;
   padding: 0 0 4em 0;
 }
-
+/* home score styling */
 #home-score,
 #guest-score {
   background-color: #000;
