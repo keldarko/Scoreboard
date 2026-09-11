@@ -45,11 +45,6 @@ export default function Page() {
         <a className="button button-dark" href="#tribute">Leave a tribute <span aria-hidden="true">→</span></a>
       </section>
 
-      <section className="legacy section-shell">
-        <div className="section-heading"><p className="section-kicker">A life of meaning</p><h2>A lasting legacy</h2></div>
-        <div className="legacy-grid"><p>Some people leave footprints on the earth. Others leave them in the hearts of everyone they meet. Samuel&apos;s presence was a gift — generous, steady, and deeply human.</p><p>Though he is no longer with us, the lessons he shared, the love he gave, and the memories he made remain close. His life is a story still being told.</p></div>
-      </section>
-
       <section id="tribute" className="tribute section-shell">
         <div className="section-heading"><p className="section-kicker">Share your remembrance</p><h2>Leave a tribute</h2><p>Words have a way of keeping love close. Add yours below.</p></div>
         <form onSubmit={submitTribute} className="tribute-form">
