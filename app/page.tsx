@@ -30,7 +30,6 @@ export default function Page() {
         <div className="hero-inner">
           <div className="hero-copy">
             <p className="eyebrow">In loving memory</p>
-            <p className="announcement">It is with profound grief that the family announces the passing of their beloved husband, father, son and brother.</p>
             <div className="title-rule" aria-hidden="true" />
             <h1><span className="first-name">Samuel</span><span className="last-name"><span className="middle-name">Kweku Gyan</span><span className="family-name">Ghansah</span></span></h1>
             <p className="dates">A life remembered · A legacy that lives on</p>
