@@ -19,7 +19,7 @@ button,input,textarea { font:inherit; }
 .portrait-frame img { width:100%; height:100%; object-fit:contain; object-position:center bottom; display:block; }
 .title-rule { height:1px; width:76px; background:var(--gold); margin:0 0 22px; }
 h1,h2 { font-family:'Playfair Display',serif; font-weight:500; margin:0; }
-h1 { width:min(100%, 390px); color:#e4bd83; font-size:clamp(34px,5.5vw,66px); line-height:1.02; letter-spacing:-.035em; white-space:nowrap; } h1 .first-name { display:block; width:100%; color:var(--white); font-family:'Tangerine',cursive; font-size:clamp(88px,11vw,144px); font-weight:700; font-style:normal; letter-spacing:.01em; line-height:.72; } h1 .last-name { display:block; width:100%; font-family:'DM Sans',sans-serif; font-size:clamp(34px,4.5vw,58px); font-style:normal; font-weight:600; line-height:.92; letter-spacing:-.07em; }
+h1 { width:min(100%, 390px); color:#e4bd83; font-size:clamp(34px,5.5vw,66px); line-height:1.02; letter-spacing:-.035em; white-space:nowrap; } h1 .first-name { display:block; width:100%; color:var(--white); font-family:'Tangerine',cursive; font-size:clamp(88px,11vw,144px); font-weight:700; font-style:normal; letter-spacing:.01em; line-height:.72; } h1 .last-name { display:block; width:100%; font-family:'DM Sans',sans-serif; font-size:clamp(34px,4.5vw,58px); font-style:normal; font-weight:600; line-height:.92; letter-spacing:-.07em; } h1 .middle-name, h1 .family-name { display:block; width:100%; } h1 .family-name { font-size:1.14em; letter-spacing:.02em; }
 .dates { color:#d5e0ec; font-size:13px; letter-spacing:.08em; margin:20px 0 0; }
 .section-shell { max-width:960px; margin:0 auto; padding:112px 32px; }
 .intro { text-align:center; display:flex; flex-direction:column; align-items:center; }
