@@ -9,7 +9,7 @@ html { scroll-behavior:smooth; background:var(--paper); }
 body { margin:0; background:var(--paper); color:var(--ink); font-family:'DM Sans',sans-serif; }
 button,input,textarea { font:inherit; }
 .memorial-page { overflow:hidden; }
-.hero { min-height:590px; display:flex; align-items:center; justify-content:center; background:#24619a; color:var(--white); text-align:left; padding:64px 24px; }
+.hero { min-height:590px; display:flex; align-items:center; justify-content:center; background:var(--navy); color:var(--white); text-align:left; padding:64px 24px; }
 .hero-inner { max-width:960px; width:100%; display:grid; grid-template-columns:minmax(280px, 0.9fr) minmax(0, 1.1fr); align-items:center; gap:72px; }
 .eyebrow,.section-kicker { text-transform:uppercase; letter-spacing:.22em; font-size:11px; font-weight:600; }
 .eyebrow { color:#d8b98d; margin:0 0 28px; }
