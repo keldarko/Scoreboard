@@ -1,6 +1,16 @@
 'use client'
 
+import useSWR from 'swr'
 import { FormEvent, useState } from 'react'
+
+const fetcher = (url: string) => fetch(url).then((response) => response.json())
+
+type Tribute = {
+  id: string
+  name: string
+  message: string
+  created_at: string
+}
 
 const initialMessages = [
   { name: 'Family & Friends', message: 'Your kindness, wisdom, and warm smile will forever remain with us.', date: 'In loving memory' },
@@ -11,13 +21,31 @@ export default function Page() {
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
   const [anonymous, setAnonymous] = useState(false)
-  const [messages, setMessages] = useState(initialMessages)
   const [submitted, setSubmitted] = useState(false)
+  const { data: savedTributes, mutate } = useSWR<Tribute[]>('/api/tributes', fetcher)
+  const messages = savedTributes ?? initialMessages.map((item, index) => ({
+    id: `legacy-${index}`,
+    name: item.name,
+    message: item.message,
+    created_at: new Date(0).toISOString(),
+    date: item.date,
+  }))
 
-  function submitTribute(event: FormEvent<HTMLFormElement>) {
+  async function submitTribute(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     if (!message.trim()) return
-    setMessages([{ name: anonymous ? 'Anonymous' : name.trim() || 'A friend', message: message.trim(), date: 'Just now' }, ...messages])
+
+    const response = await fetch('/api/tributes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: anonymous ? 'Anonymous' : name.trim() || 'A friend',
+        message: message.trim(),
+      }),
+    })
+
+    if (!response.ok) return
+    await mutate()
     setName('')
     setMessage('')
     setSubmitted(true)
@@ -58,7 +86,7 @@ export default function Page() {
         </form>
       </section>
 
-      <section className="messages section-shell"><div className="section-heading"><p className="section-kicker">Words from the heart</p><h2>Tributes</h2></div><div className="message-list">{messages.map((item, index) => <article className="message" key={`${item.date}-${index}`}><p className="quote">“{item.message}”</p><p className="message-by">{item.name} <span>·</span> {item.date}</p></article>)}</div></section>
+      <section className="messages section-shell"><div className="section-heading"><p className="section-kicker">Words from the heart</p><h2>Tributes</h2></div><div className="message-list">{messages.map((item, index) => <article className="message" key={`${item.id}-${index}`}><p className="quote">“{item.message}”</p><p className="message-by">{item.name} <span>·</span> {item.date ?? new Date(item.created_at).toLocaleDateString()}</p></article>)}</div></section>
 
       <footer><p className="footer-mark">SG</p><p>Samuel Gyan-Ghansah</p><p className="footer-small">Always loved. Never forgotten.</p></footer>
     </main>
