@@ -31,7 +31,7 @@ export default function Page() {
           <p className="eyebrow">In loving memory</p>
           <div className="portrait-frame"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bio-pic-sp2jzdjnGpaEOH3V9VjF6aeHQU9MpM.png" alt="Portrait of Samuel Gyan-Ghansah" /></div>
           <div className="title-rule" aria-hidden="true" />
-          <h1>Samuel Gyan-Ghansah</h1>
+          <h1><span className="first-name">Samuel</span> Gyan-Ghansah</h1>
           <p className="dates">A life remembered · A legacy that lives on</p>
         </div>
       </header>
